@@ -1,0 +1,19 @@
+{
+  "name": "cy-xvfb-test",
+  "version": "1.0.0",
+  "description": "Tests for xvfb running under Cypress",
+  "scripts": {
+    "cy:run": "npx cypress run",
+    "cy:run:chrome": "npx cypress run --browser chrome",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cypress",
+    "xvfb"
+  ],
+  "author": "Mike McCready",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "12.13.0"
+  }
+}
