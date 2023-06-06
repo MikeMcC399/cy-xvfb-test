@@ -22,4 +22,4 @@ jobs:
       - name: Cypress run
         run: npx cypress run --browser chrome
         env:
-            DEBUG: 'cypress:*'
+            DEBUG: 'cypress:*,xvfb'

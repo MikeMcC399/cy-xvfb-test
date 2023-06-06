@@ -39,7 +39,7 @@ jobs:
       - name: Cypress run
         run: npx cypress run --browser chrome
         env:
-            DEBUG: 'cypress:*'
+            DEBUG: 'cypress:*,xvfb'
             ELECTRON_RUN_AS_NODE: 1
 
   chrome-verify-debug:
@@ -54,5 +54,5 @@ jobs:
       - name: Cypress run
         run: npx cypress run --browser chrome
         env:
-            DEBUG: 'cypress:*'
+            DEBUG: 'cypress:*,xvfb'
             ELECTRON_RUN_AS_NODE: 1
