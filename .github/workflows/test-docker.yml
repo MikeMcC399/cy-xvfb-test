@@ -1,7 +1,5 @@
 name: Test Docker
 on: workflow_dispatch
-env:
-  ELECTRON_EXTRA_LAUNCH_ARGS: '--disable-gpu'
 jobs:
   docker-base:
     runs-on: ubuntu-22.04
