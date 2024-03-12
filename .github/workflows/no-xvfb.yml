@@ -1,0 +1,16 @@
+name: No xvfb
+on:
+  workflow_dispatch:
+
+jobs:
+  cy-run:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm ci
+      # provoke error by removing xvfb
+      - run: sudo apt-get remove xvfb
+      - name: Cypress run
+        run: npx cypress run
