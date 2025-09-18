@@ -2,7 +2,7 @@ name: Test Docker debug
 on: workflow_dispatch
 jobs:
   docker-base:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     # from https://hub.docker.com/r/cypress/base/tags
     defaults:
       run:
@@ -21,7 +21,7 @@ jobs:
           DEBUG: 'cypress:*,xvfb,xvfb-process'
 
   docker-browsers:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     defaults:
       run:
         shell: bash
@@ -44,7 +44,7 @@ jobs:
           DEBUG: 'cypress:*,xvfb,xvfb-process'
 
   docker-included:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     # from https://hub.docker.com/r/cypress/included/tags
     defaults:
       run:
