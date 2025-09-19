@@ -4,7 +4,7 @@ on:
 
 jobs:
   cy-run:
-    runs-on: ubuntu-24.04
+    runs-on: macos-15
     steps:
       - name: Checkout
         uses: actions/checkout@v4

@@ -1,9 +1,9 @@
-name: Chrome
+name: Electron
 on:
   workflow_dispatch:
 
 jobs:
-  chrome:
+  electron:
     runs-on: macos-15
     steps:
       - name: Checkout
@@ -11,8 +11,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Cypress run
-        run: npx cypress run --browser chrome
-  chrome-debug:
+        run: npx cypress run
+  electron-debug:
     runs-on: macos-15
     steps:
       - name: Checkout
@@ -20,6 +20,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Cypress run
-        run: npx cypress run --browser chrome
+        run: npx cypress run
         env:
             DEBUG: 'cypress:*,xvfb'
