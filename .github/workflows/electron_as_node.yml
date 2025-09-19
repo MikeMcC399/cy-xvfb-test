@@ -1,0 +1,58 @@
+name: Electron ELECTRON_RUN_AS_NODE
+on:
+  workflow_dispatch:
+
+jobs:
+  electron:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm ci
+      - name: Cypress run
+        run: npx cypress run
+        env:
+          ELECTRON_RUN_AS_NODE: 1
+
+  electron-verify:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm ci
+      - name: Verify first
+        run: npx cypress verify
+      - name: Cypress run
+        run: npx cypress run
+        env:
+          ELECTRON_RUN_AS_NODE: 1
+
+  electron-debug:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm ci
+      - name: Cypress run
+        run: npx cypress run
+        env:
+            DEBUG: 'cypress:*,xvfb'
+            ELECTRON_RUN_AS_NODE: 1
+
+  electron-verify-debug:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm ci
+      - name: Verify first
+        run: npx cypress verify
+      - name: Cypress run
+        run: npx cypress run
+        env:
+            DEBUG: 'cypress:*,xvfb'
+            ELECTRON_RUN_AS_NODE: 1
